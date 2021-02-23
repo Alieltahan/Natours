@@ -1,0 +1,94 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    margin: 1rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    font-weight: 400;
+    position: relative;
+    font-size: $font-default-size;
+    border: none;
+  }
+  &:hover,
+  &:focus {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    outline: none;
+    cursor: pointer;
+  }
+  &:active {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &--white {
+    color: $color-black;
+    background-color: $color-white;
+    &::after {
+      background-color: #fff;
+    }
+
+    &:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &--green {
+    color: $color-white;
+    background-color: $color-primary;
+    &::after {
+      background-color: $color-primary;
+    }
+
+    &:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 2s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.4s;
+    z-index: -1;
+    border-radius: 10rem;
+  }
+}
+
+.btn--text {
+  &:link,
+  &:visited {
+    font-size: $font-default-size;
+    display: inline-block;
+    color: $color-primary-dark;
+    padding: 0.5rem;
+    border-bottom: 1px solid $color-primary-dark;
+    text-decoration: none;
+    transition: 0.8s;
+  }
+  &:hover {
+    color: white;
+    background-color: $color-primary-dark;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(0px);
+  }
+}

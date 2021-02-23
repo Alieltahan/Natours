@@ -1,0 +1,55 @@
+.composition {
+  position: relative;
+  margin-top: 5rem;
+
+  @include responsive(tab-port900) {
+    margin-top: 4rem;
+  }
+  &__photo {
+    position: absolute;
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color_black, 0.6);
+
+    @include responsive(tab-port900) {
+      position: relative;
+      width: 33.3333%;
+    }
+    &--p1 {
+      top: -5rem;
+      left: 36%;
+      transition: 0.5s;
+
+      @include responsive(tab-port900) {
+        top: 0;
+        left: 0;
+      }
+    }
+    &--p2 {
+      top: 8rem;
+      left: 17%;
+      transition: 0.5s;
+
+      @include responsive(tab-port900) {
+        top: -2rem;
+        left: -6rem;
+      }
+    }
+    &--p3 {
+      top: -3rem;
+      left: -10%;
+      transition: 0.5s;
+
+      @include responsive(tab-port900) {
+        top: -4rem;
+        left: -12rem;
+      }
+    }
+    &:hover {
+      z-index: 2;
+      transform: scale(1.2) translateY(0.5rem);
+    }
+  }
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}
